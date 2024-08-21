@@ -1,10 +1,67 @@
-header nav {
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  background-color: var(--header-bg);
-  color: var(--header-color);
+  color: var(--content-text);
 
-  padding: 1rem;
+  padding: 1rem 1.5rem;
+
+  border-bottom: 1px solid var(--header-border);
+  box-shadow: 0 0 3px 0px var(--header-border);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 1000;
+  text-decoration: none;
+  color: var(--logo-text);
+
+  position: relative;
+  padding: 0.5rem 0 0.25rem 0;
+}
+.logo::before {
+  content: "THE ODIN";
+  position: absolute;
+  top: 3px;
+  color: var(--content-text);
+  right: 0;
+  font-size: 1.2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.buttons button {
+  padding: 0.6em 0.8em;
+  width: 95px;
+
+  border: none;
+  border-radius: var(--radius-button);
+
+  font-size: 1rem;
+  font-weight: 800;
+
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.buttons a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.signup {
+  background-color: var(--primary-button);
+  color: #fff;
+}
+.signup:hover {
+  background-color: var(--hover-button);
+}
+
+.login {
+  background-color: #ececec;
+}
+.login:hover {
+  background-color: #d3d3d3;
 }

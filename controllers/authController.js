@@ -30,6 +30,10 @@ exports.signup = async (req, res) => {
   }
 };
 
+exports.loginForm = (req, res, next) => {
+  res.render("login");
+};
+
 exports.login = (req, res, next) => {
   passport.authenticate("local", (err, user, info) => {
     if (err) return next(err);

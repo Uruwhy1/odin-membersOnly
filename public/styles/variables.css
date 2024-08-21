@@ -1,13 +1,11 @@
 :root {
-  --page-bg: #f2f2f2;
+  --page-bg: #f9fbfc;
+  --content-text: #2a2a2a;
 
-  --header-bg: #003366;
-  --header-text: #ffffff;
-
-  --content-bg: #ffffff;
-  --content-text: #333333;
-  --content-border: #e0e0e0;
+  --header-border: #e0e0e0;
+  --logo-text: red;
 
   --primary-button: #0073e6;
   --hover-button: #005bb5;
+  --radius-button: 7px;
 }

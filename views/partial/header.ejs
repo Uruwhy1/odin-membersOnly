@@ -1,15 +1,16 @@
 <header>
-  <link rel="stylesheet" href="./styles/header.css">
-  <nav>
-    <a href="/">Home</a>
-    <% if (isUserAuthenticated) { %>
-    <a href="/logout">Logout</a>
-    <% } else { %>
-    <form action="/login" method="post" class="login-form">
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-    <% } %>
-  </nav>
+  <link rel="stylesheet" href="./styles/header.css" />
+  <a class="logo" href="/">Messages</a>
+  <% if (isUserAuthenticated) { %>
+  <a href="/logout">Logout</a>
+  <% } else { %>
+  <div class="buttons">
+    <a href="/signup">
+      <button class="signup" type="button">Sign Up</button>
+    </a>
+    <a href="/login">
+      <button class="login" type="button">Log In</button>
+    </a>
+  </div>
+  <% } %>
 </header>

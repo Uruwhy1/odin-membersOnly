@@ -8,4 +8,9 @@
   --primary-button: #0073e6;
   --hover-button: #005bb5;
   --radius-button: 7px;
+
+  --form-border: rgba(0, 0, 0, 0.336);
+  --form-bg: #ffffff;
+  --input-border: #ccc;
 }
+V

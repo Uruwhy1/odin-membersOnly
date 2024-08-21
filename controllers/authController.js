@@ -13,7 +13,7 @@ exports.signup = async (req, res) => {
     const { firstName, lastName, email, password, confirmPassword } = req.body;
 
     if (password !== confirmPassword) {
-      return res.status(400).send("Passwords do not match");
+      return res.redirect('/signup?status=error&message=match');
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);

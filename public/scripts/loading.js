@@ -1,30 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const loadingElement = document.querySelector("#loading");
+const loadingElement = document.querySelector("#loading");
 
-  function showLoadingBar() {
-    loadingElement.classList.add("active");
-  }
+export function showLoadingBar() {
+  loadingElement.classList.add("active");
+}
 
-  // Delay so animation always has time to complete
-  document.addEventListener("click", function (event) {
-    const target = event.target.closest("a");
+export function hideLoadingBar() {
+  console.log("xDD")
+  loadingElement.classList.remove("active");
+}
 
-    if (target && target.href) {
-      event.preventDefault();
-      showLoadingBar();
-      setTimeout(() => {
-        location.href = target.href;
-      }, 500);
-    }
-  });
+// Delay so animation always has time to complete
+document.addEventListener("click", function (event) {
+  const target = event.target.closest("a");
 
-  document.addEventListener("submit", function (event) {
-    const form = event.target.closest("form");
+  if (target && target.href) {
     event.preventDefault();
     showLoadingBar();
-
     setTimeout(() => {
-      form.submit();
-    }, 500); // delay so loading bar fills up
-  });
+      location.href = target.href;
+    }, 500);
+  }
 });

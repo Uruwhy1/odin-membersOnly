@@ -1,0 +1,10 @@
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--header-bg);
+  color: var(--header-color);
+
+  padding: 1rem;
+}

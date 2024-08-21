@@ -3,17 +3,21 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "browser-sync start --proxy 'localhost:3000' --files 'public/**/*' 'views/**/*' --no-notify --reload-delay 300"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "connect-livereload": "^0.6.1",
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
+    "livereload": "^0.9.3",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "pg": "^8.12.0",

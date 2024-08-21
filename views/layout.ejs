@@ -12,7 +12,7 @@
     <title><%= title %></title>
   </head>
   <body>
-    <span id="loading"></span>
+    <div id="loading"></div>
 
     <% if (title !== "Log In" && title !== "Sign Up") { %> <%-
     include('./partial/header.ejs', { isUserAuthenticated: isUserAuthenticated

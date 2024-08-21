@@ -6,6 +6,8 @@ main {
 
   height: 100vh;
   padding: 0;
+
+  color: #000;
 }
 
 form {
@@ -24,14 +26,13 @@ label {
   margin-bottom: 5px;
 }
 
-input
-{
+input {
   width: 100%;
   margin-bottom: 1rem;
   padding: 10px;
   box-sizing: border-box;
 
-  border: 0px; 
+  border: 0px;
   border-radius: 4px;
 
   font-size: 16px;
@@ -40,7 +41,6 @@ input
 
 #confirm-passowrd {
   user-select: none;
-  
 }
 
 button[type="button"] {
@@ -74,10 +74,8 @@ button[type="button"]:focus {
   color: inherit;
   background-color: #fff;
 
-  transition: 0.3s;
-
   border: 1px solid var(--form-border);
-  box-shadow: 3px 3px var(--form-border);
+  box-shadow: 5px 5px var(--form-border);
 }
 
 .back:hover {

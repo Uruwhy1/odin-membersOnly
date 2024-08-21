@@ -1,44 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="./styles/variables.css" />
-
-    <script src="./scripts/loading.js"></script>
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-  </head>
-  <body>
-    <span id="loading"></span>
-    <%- include('./partial/header.ejs', { isUserAuthenticated:
-    isUserAuthenticated }) %>
-    <main>
-      <div class="message-board">
-        <% if (isUserAuthenticated) { %>
-        <p>Welcome back, <%= user.firstName %>!</p>
-        <!-- Display messages with author and date -->
-        <% messages.forEach(message => { %>
-        <div>
-          <h2><%= message.title %></h2>
-          <p><%= message.text %></p>
-          <small
-            >By <%= message.user.firstName %> on <%= message.createdAt %></small
-          >
-        </div>
-        <% }); %> <% } else { %>
-        <p>Please log in to see more details.</p>
-        <!-- Display messages without author and date -->
-        <% messages.forEach(message => { %>
-        <div>
-          <h2><%= message.title %></h2>
-          <p><%= message.text %></p>
-        </div>
-        <% }); %> <% } %>
-      </div>
-      <!-- Common elements like footer or navigation can go here -->
-    </main>
-  </body>
-</html>
+<div class="message-board">
+  <% if (isUserAuthenticated) { %>
+  <p>Welcome back, <%= user.firstName %>!</p>
+  <!-- Display messages with author and date -->
+  <% messages.forEach(message => { %>
+  <div>
+    <h2><%= message.title %></h2>
+    <p><%= message.text %></p>
+    <small>By <%= message.user.firstName %> on <%= message.createdAt %></small>
+  </div>
+  <% }); %> <% } else { %>
+  <p>Please log in to see more details.</p>
+  <!-- Display messages without author and date -->
+  <% messages.forEach(message => { %>
+  <div>
+    <h2><%= message.title %></h2>
+    <p><%= message.text %></p>
+  </div>
+  <% }); %> <% } %>
+</div>

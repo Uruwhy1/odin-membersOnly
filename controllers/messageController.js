@@ -12,7 +12,7 @@ exports.getHomePage = async (req, res) => {
     });
     const isUserAuthenticated = isAuthenticated(req);
 
-    res.render('home', { messages, isUserAuthenticated });
+    res.render('home', { title: 'Message Board', messages, isUserAuthenticated });
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');

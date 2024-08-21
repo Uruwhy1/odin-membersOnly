@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
+
+    <script src="./scripts/loading.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <span id="loading"></span>
+
+    <% if (title !== "Log In" && title !== "Sign Up") { %> <%-
+    include('./partial/header.ejs', { isUserAuthenticated: isUserAuthenticated
+    }) %> <% } %>
+
+    <main><%- body %></main>
+  </body>
+</html>

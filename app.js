@@ -1,11 +1,15 @@
 const express = require("express");
 const session = require("express-session");
+
 const passport = require("passport");
 const passportConfig = require("./passport-config");
+
 const livereload = require("livereload");
 const connectLivereload = require("connect-livereload");
 
 const app = express();
+const expressLayouts = require("express-ejs-layouts");
+
 const path = require("path");
 const authRoutes = require("./routes/authRoutes");
 const messageRoutes = require("./routes/messageRoutes");
@@ -48,6 +52,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.set("view engine", "ejs");
+app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

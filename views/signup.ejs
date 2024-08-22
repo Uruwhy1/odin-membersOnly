@@ -1,251 +1,47 @@
-<link rel="stylesheet" href="/styles/signup.css" />
-<script src="/scripts/signup.js"></script>
-<div class="left-area">
-  <p>
-    Photo by
-    <a
-      class="colored-link"
-      href="https://unsplash.com/@silasvanovereem?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-      target="_blank"
-      >Silas van Overeem</a
-    >
-    on
-    <a
-      class="colored-link"
-      href="https://unsplash.com/photos/full-moon-over-clouds-during-night-time-7ga11BHwXHY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-      target="_blank"
-      >Unsplash</a
-    >
-  </p>
-</div>
-<div class="right-area">
-  <div class="top">
-    <h1>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <span>Atque, ab accusamus.</span> Illo vel iste quod minima?
-      <span>Illum quasi est non.</span>
-    </h1>
-  </div>
-  <form id="form" autocomplete="off" method="post" action="/signup">
-    <!-- Without this input Edge ignores the autocomplete=off in email field -->
-    <input
-      autocomplete="off"
-      class="valid"
-      name="hidden"
-      type="text"
-      style="display: none"
-    />
-    <div class="line">
-      <div class="input-holder">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="none"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-user"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <input
-            type="text"
-            id="firstname"
-            name="firstName"
-            placeholder="First Name"
-            pattern="^[^\d]+$"
-            required
-          />
-        </div>
-        <span class="error-message"></span>
-      </div>
-      <div class="input-holder">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="none"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-user"
-          >
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          <input
-            type="text"
-            id="lastname"
-            name="lastName"
-            placeholder="Last Name"
-            pattern="^[^\d]+$"
-            required
-          />
-        </div>
-        <span class="error-message"></span>
-      </div>
-    </div>
-    <div class="line">
-      <div class="input-holder">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="none"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-mail"
-          >
-            <path
-              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-            ></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            autocomplete="off"
-            required
-          />
-        </div>
-        <span class="error-message"></span>
-      </div>
-      <div class="input-holder">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="none"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-mail"
-          >
-            <path
-              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-            ></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-          <input
-            class="confirm"
-            type="email"
-            id="email-confirm"
-            name="email-confirm"
-            placeholder="Confirm Email"
-            required
-          />
-        </div>
-        <span class="error-message"></span>
-      </div>
-    </div>
-    <div class="line passwords">
-      <div class="input-holder">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="none"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-lock"
-          >
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <!-- Readonly stuff is so Firefox doesn't generate password -->
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            pattern="^(?=.*\d)(?=.*[!@#$%^,.&*])(?=.*[A-Z])(?=.*[a-z]).{6,20}$"
-            readonly
-            onfocus="this.removeAttribute('readonly');"
-            required
-          />
-        </div>
-        <span class="error-message"></span>
-      </div>
-      <div class="input-holder">
-        <div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="nonez"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="feather feather-lock"
-          >
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-          </svg>
-          <input
-            class="confirm"
-            type="password"
-            id="password-confirm"
-            name="password-confirm"
-            readonly
-            onfocus="this.removeAttribute('readonly');"
-            placeholder="Confirm Password"
-            required
-          />
-        </div>
-        <span class="error-message"></span>
-      </div>
-    </div>
-    <button type="button" id="submitButton">Create Account</button>
-    <a class="back" href="/">Go Back</a>
-  </form>
-  <div class="bottom">
-    <div class="bottom-link">
-      <a href="https://github.com/Uruwhy1" class="footers-container">
-        <img src="./images/icons8-github-50.png" alt="Github Logo" />
-        <h1>Github</h1>
-      </a>
-      <p>
-        <a
-          class="colored-link"
-          target="_blank"
-          href="https://icons8.com/icon/12599/github"
-          >GitHub</a
-        >
-        icon by
-        <a class="colored-link" target="_blank" href="https://icons8.com"
-          >Icons8</a
-        >
-      </p>
-    </div>
-    <div class="bottom-link">
-      <a href="https://www.theodinproject.com/" class="footers-container">
-        <img src="./images/odin-lined.png" alt="TOP Logo" />
-        <h1>TOP</h1>
-      </a>
-      <p></p>
-    </div>
+<link rel="stylesheet" href="/styles/form.css" />
+<script type="module" src="/scripts/form.js"></script>
+<div class="container">
+  <div class="left"></div>
+  <div class="right">
+    <h2>Become a <span>Member</span></h2>
+    <form action="/signup" method="POST" id="create">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        placeholder=" "
+        required
+      /><br />
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        placeholder=" "
+        required
+      /><br />
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder=" "
+        required
+      /><br />
+      <label id="pw-label" for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder=" "
+        minlength="6"
+        required
+      />
+      <label id="error-message"></label>
+      <button id="submit-button" type="button">Sign Up</button>
+      <p>Already a member? <a href="/login">Log In</a></p>
+    </form>
   </div>
 </div>
+<a class="back" href="/">Go Back</a>

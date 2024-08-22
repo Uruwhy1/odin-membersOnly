@@ -7,19 +7,16 @@
   --logo-text: red;
 
   --primary-color: #5222a0;
-  --primary-hover: #6d26e0;
+  --primary-hover: #6c38bf;
 
   --secondary-color: #fdcda7;
-  --radius-button: 7px;
 
-  --form-border: rgba(255, 255, 255, 0.57);
   --form-bg: #ffffff;
   --input-border: #ccc;
 
-  /* SIGN UP FORM STUFF */
-  --form-color: var(--primary-color);
-  --focus-color: var(--secondary-color);
-  --correct-color: rgb(0, 255, 0);
-  --wrong-color: rgb(255, 2, 2);
-  --link-color: #00ccff !important;
+  /* same for light and dark mode */
+  --form-bg: #202020;
+
+  --radius-button: 7px;
+  --transition-duration: 0.3s;
 }

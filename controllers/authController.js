@@ -10,16 +10,7 @@ exports.signupForm = (req, res) => {
 
 exports.signup = async (req, res) => {
   try {
-    const {
-      empty,
-      firstName,
-      lastName,
-      email,
-      confirmEmail,
-      password,
-      confirmPassword,
-    } = req.body;
-
+    const { firstName, lastName, email, password } = req.body;
 
     const hashedPassword = await bcrypt.hash(password, 10);
 

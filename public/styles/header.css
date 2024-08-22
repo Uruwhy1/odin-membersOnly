@@ -11,20 +11,22 @@ header {
 }
 
 .logo {
+  line-height: 1;
+
   font-size: 2.5rem;
   font-weight: 1000;
   text-decoration: none;
   color: var(--logo-text);
 
   position: relative;
-  padding: 0.4rem 0 0rem 0;
+  padding: 0.6rem 0 0rem 0;
 }
 .logo::before {
   content: "THE ODIN";
   position: absolute;
-  top: -3px;
+  top: 2px;
   color: var(--content-text);
-  right: 0;
+  right: 3px;
   font-size: 1.2rem;
 }
 

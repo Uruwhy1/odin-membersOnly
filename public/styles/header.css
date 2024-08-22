@@ -42,7 +42,7 @@ header {
   border-radius: var(--radius-button);
 
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 500;
 
   cursor: pointer;
   transition: filter var(--transition-duration);

@@ -6,16 +6,46 @@ main {
 
   height: 100vh;
   padding: 0;
+  color: #000;
+  background-color: var(--form-bg);
+}
+
+.container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr 1fr;
+  width: min-content;
+
+  background-color: #fff;
+  box-shadow: 10px 10px rgb(182, 182, 182);
+}
+
+.left {
+  width: 300px;
+  height: 100%;
+
+  background: url(../photo-1592484939110-1f2ea1820782.avif);
+  background-size: cover;
+}
+
+.right {
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-right: auto;
+  font-weight: 1000;
 }
 
 form {
-  background-color: var(--form-bg);
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid var(--form-border);
-  box-shadow: 7px 7px var(--form-border);
-  width: 100%;
-  max-width: 400px;
+  min-width: 300px;
 }
 
 label {
@@ -24,27 +54,42 @@ label {
   margin-bottom: 5px;
 }
 
-input
-{
+input {
   width: 100%;
   margin-bottom: 1rem;
   padding: 10px;
   box-sizing: border-box;
 
-  border: 0px; 
-  border-radius: 4px;
+  border: 0px;
+  border-radius: 1px;
 
   font-size: 16px;
   transition: outline-color 0.3s;
 }
 
-#confirm-passowrd {
-  user-select: none;
-  
+#password {
+  position: relative;
+  margin-bottom: 20px;
+}
+#pw-label {
+  position: relative;
+}
+#pw-label::after {
+  content: "At least 6 characters.";
+  color: gray;
+  font-size: 0.9rem;
+  font-weight: normal;
+  position: absolute;
+  right: 0;
 }
 
 button[type="button"] {
-  background-color: var(--primary-button);
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
   color: #fff;
   padding: 12px;
   border: none;
@@ -53,10 +98,10 @@ button[type="button"] {
   font-size: 16px;
   font-weight: 500;
   width: 100%;
-  transition: background-color 0.3s;
+  transition: filter 0.3s;
 }
 button[type="button"]:hover {
-  background-color: var(--hover-button);
+  filter: saturate(1.5);
 }
 button[type="button"]:focus {
   outline: 2px solid red;
@@ -64,7 +109,6 @@ button[type="button"]:focus {
 
 .back {
   display: inline-block;
-  border-radius: 4px;
   margin-top: 2rem;
   padding: 0.7rem 1rem;
 
@@ -77,10 +121,24 @@ button[type="button"]:focus {
   transition: 0.3s;
 
   border: 1px solid var(--form-border);
-  box-shadow: 3px 3px var(--form-border);
+  box-shadow: 5px 5px rgb(182, 182, 182);
 }
 
 .back:hover {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+a {
+  margin-left: 3px;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+a:hover {
   text-decoration: underline;
 }
 

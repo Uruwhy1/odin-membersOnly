@@ -1,16 +1,22 @@
 :root {
-  --page-bg: #f9fbfc;
-  --content-text: #2a2a2a;
+  --page-bg: #202020;
+  --content-text: #fff;
+  --content-bg: #131313;
 
-  --header-border: #e0e0e0;
+  --header-border: #ffffff5d;
   --logo-text: red;
 
-  --primary-button: #0073e6;
-  --hover-button: #005bb5;
-  --radius-button: 7px;
+  --primary-color: #5222a0;
+  --primary-hover: #6c38bf;
 
-  --form-border: rgba(0, 0, 0, 0.336);
+  --secondary-color: #fdcda7;
+
   --form-bg: #ffffff;
   --input-border: #ccc;
+
+  /* same for light and dark mode */
+  --form-bg: #202020;
+
+  --radius-button: 7px;
+  --transition-duration: 0.3s;
 }
-V

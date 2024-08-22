@@ -44,24 +44,20 @@ header {
   font-weight: 800;
 
   cursor: pointer;
-  transition: background 0.3s;
+  transition: filter var(--transition-duration);
 }
 .buttons a {
   color: inherit;
   text-decoration: none;
 }
+.buttons button:hover {
+  filter: brightness(1.2);
+}
 
 .signup {
-  background-color: var(--primary-button);
-  color: #fff;
+  background-color: var(--primary-color);
+  color: #eeeeee;
 }
-.signup:hover {
-  background-color: var(--hover-button);
-}
-
 .login {
-  background-color: #ececec;
-}
-.login:hover {
-  background-color: #d3d3d3;
+  background-color: #e9e9e9;
 }

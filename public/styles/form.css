@@ -13,7 +13,7 @@ main {
 .container {
   display: grid;
   place-content: center;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   width: min-content;
 
   background-color: #fff;
@@ -21,7 +21,7 @@ main {
 }
 
 .left {
-  width: 300px;
+  width: 350px;
   height: 100%;
 
   background: url(../photo-1592484939110-1f2ea1820782.avif);

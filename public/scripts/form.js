@@ -1,19 +1,28 @@
-import { showLoadingBar } from "./loading.js";
-
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
-  const status = urlParams.get("status");
+  const error = urlParams.get("error");
 
-  if (status === "error") {
+  if (error) {
+    console.log("Xdd");
     displayMessage(formatMessage());
   }
 
   function formatMessage() {
-    const message = urlParams.get("message");
-    if (message.includes("match")) {
-      return "Passwords do not match.";
+    const message = urlParams.get("error").toLowerCase();
+
+    switch (message) {
+      case "email-existing":
+        document.getElementById("email").focus();
+        return "There already is an user with that email.";
+      case "incorrect email.":
+        document.getElementById("email").focus();
+        return "No user with that email found.";
+      case "incorrect password.":
+        document.getElementById("password").focus();
+        return "Incorrect password.";
+      default:
+        return "Unexpected error ocurred.";
     }
-    return "Unexpected error ocurred.";
   }
 
   function displayMessage(message) {
@@ -23,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       messageElement.style.color = "red";
       messageElement.style.display = "block";
       messageElement.style.fontWeight = "500";
+      messageElement.style.fontSize = "0.9rem";
     }
   }
 });

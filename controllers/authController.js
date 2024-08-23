@@ -12,6 +12,15 @@ exports.signup = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
 
+    const emails = await User.findAll({
+      where: {
+        email: email,
+      },
+    });
+    if (emails) {
+      return res.redirect("signup/?error=email-existing");
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await User.create({
@@ -40,7 +49,7 @@ exports.login = (req, res, next) => {
 
     if (!user) {
       // Redirect with error message as query parameter
-      return res.redirect("/?error=" + encodeURIComponent(info.message));
+      return res.redirect("/login/?error=" + encodeURIComponent(info.message));
     }
 
     req.logIn(user, (err) => {

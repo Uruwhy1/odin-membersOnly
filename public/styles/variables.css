@@ -10,12 +10,17 @@
   --primary-hover: #6c38bf;
 
   --secondary-color: #fdcda7;
+  --tertiary-color: #b32daa; /* middle between secondary and primary */
 
   --form-bg: #ffffff;
   --input-border: #ccc;
 
   /* same for light and dark mode */
   --form-bg: #202020;
+  --form-shadow: rgb(182, 182, 182);
+
+  --hyperlink-color: rgb(68, 158, 255);
+  --focus-color: #007bff;
 
   --radius-button: 7px;
   --transition-duration: 0.3s;

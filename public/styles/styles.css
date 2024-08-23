@@ -20,7 +20,7 @@ body {
   left: 0;
   width: 100%;
   height: 5px;
-  background: var(--link-color);
+  background: var(--hyperlink-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s ease;

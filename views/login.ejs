@@ -1,23 +1,30 @@
 <link rel="stylesheet" href="/styles/form.css" />
 <script type="module" src="/scripts/form.js"></script>
-
-<form action="/login" method="POST">
-  <label for="email">Email:</label>
-  <input
-    type="email"
-    id="email"
-    name="email"
-    placeholder="email@test.com"
-    required
-  /><br />
-  <label for="password">Password:</label>
-  <input
-    type="password"
-    id="password"
-    name="password"
-    placeholder="******"
-    required
-  /><br />
-  <button type="button">Log In</button>
-</form>
+<div class="container">
+  <div class="left log-in"></div>
+  <div class="right">
+    <h2>Log <span>In</span></h2>
+    <form action="/login" method="POST" id="create">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder=" "
+        required
+      /><br />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder=" "
+        required
+      />
+      <label id="error-message"></label>
+      <button id="submit-button" type="submit">Log In</button>
+      <p>Not a member? <a href="/signup">Sign Up</a></p>
+    </form>
+  </div>
+</div>
 <a class="back" href="/">Go Back</a>

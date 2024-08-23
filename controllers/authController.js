@@ -12,25 +12,28 @@ exports.signup = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
 
-    const emails = await User.findAll({
-      where: {
-        email: email,
-      },
-    });
-    if (emails) {
+    const emailExists = await User.findOne({ where: { email: email } });
+    if (emailExists) {
       return res.redirect("signup/?error=email-existing");
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await User.create({
+   const newUser = await User.create({
       firstName,
       lastName,
       email,
       password: hashedPassword,
       membershipStatus: false,
     });
-    res.redirect("/");
+
+    req.logIn(newUser, (err) => {
+      if (err) {
+        return next(err);
+      }
+      req.session.user = newUser;
+      return res.redirect("/");
+    });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");

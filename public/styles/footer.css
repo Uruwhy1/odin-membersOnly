@@ -1,0 +1,63 @@
+main {
+  padding-bottom: 107px; 
+  /* padding to content so footer doesn't get on top of things at end of page */
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+
+  bottom: 0;
+  padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  color: #000;
+  background-color: var(--footer-bg);
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer button {
+  padding: 0.6em 0.8em;
+  width: 95px;
+
+  border: none;
+  border-radius: var(--radius-button);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all var(--transition-duration);
+}
+footer a {
+  height: fit-content;
+  color: inherit;
+  text-decoration: none;
+}
+
+.signup {
+  background: var(--first-third-gradient);
+
+  color: #eeeeee;
+}
+.signup:hover {
+  filter: saturate(1.4);
+}
+.login {
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid #c7c7c7;
+}
+.login:hover {
+  background-color: var(--page-bg);
+  border-color: transparent;
+  color: #fff;
+}

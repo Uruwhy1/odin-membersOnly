@@ -89,17 +89,12 @@ input {
 }
 
 button {
-  background: linear-gradient(
-    to right,
-    var(--primary-color),
-    var(--tertiary-color),
-    var(--secondary-color)
-  );
+  background: var(--first-third-second-gradient);
 
   color: #fff;
   padding: 12px;
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-button);
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;

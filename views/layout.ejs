@@ -19,5 +19,8 @@
     }) %> <% } %>
 
     <main><%- body %></main>
+
+    <% if (title !== "Log In" && title !== "Sign Up" && !isUserAuthenticated) {
+    %> <%- include('./partial/footer.ejs',) %> <% } %>
   </body>
 </html>

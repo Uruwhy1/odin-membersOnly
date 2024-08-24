@@ -4,11 +4,6 @@ export function showLoadingBar() {
   loadingElement.classList.add("active");
 }
 
-export function hideLoadingBar() {
-  console.log("xDD")
-  loadingElement.classList.remove("active");
-}
-
 // Delay so animation always has time to complete
 document.addEventListener("click", function (event) {
   const target = event.target.closest("a");

@@ -23,7 +23,7 @@ main {
 .left {
   width: 350px;
   height: 100%;
-
+  background-color: gray;
   background-size: cover;
 }
 .left.sign-up {
@@ -196,10 +196,9 @@ button:focus {
     width: 100%;
   }
 }
- 
+
 @media screen and (max-width: 290px) {
   h2 {
     font-size: 1.5rem;
   }
-  
 }

@@ -43,5 +43,10 @@ main {
 }
 
 .message-board {
-  background-color: var(--content-bg);
+  background-color: var(--form-bg);
+  box-shadow: 10px 10px var(--form-shadow);
+  
+
+  min-height: 80%;
+  min-width: 80vw;
 }

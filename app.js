@@ -37,6 +37,8 @@ sequelize.sync().then(() => {
   console.log("Database & tables created!");
 });
 
+const PORT = process.env.PORT || 3000;
+
 // middleware
 app.use(
   session({
@@ -65,6 +67,6 @@ app.use((req, res, next) => {
 app.use("/", messageRoutes);
 app.use("/", authRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on http://localhost:${process.env.PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

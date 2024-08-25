@@ -1,5 +1,5 @@
 main {
-  padding-bottom: 107px; 
+  padding-bottom: 107px;
   /* padding to content so footer doesn't get on top of things at end of page */
 }
 
@@ -35,7 +35,7 @@ footer button {
   font-weight: 500;
 
   cursor: pointer;
-  transition: all var(--transition-duration);
+  transition: all var(--transition-duration), --l var(--transition-duration);
 }
 footer a {
   height: fit-content;
@@ -43,13 +43,24 @@ footer a {
   text-decoration: none;
 }
 
-.signup {
-  background: var(--first-third-gradient);
+@property --l {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 10px;
+}
 
+.signup {
+  --l: 20px;
+  background: linear-gradient(
+    to right,
+    var(--primary-color) var(--l),
+    var(--middle-color)
+  );
   color: #eeeeee;
 }
 .signup:hover {
-  filter: saturate(1.4);
+  --l: 100px;
+  filter: saturate(2.3);
 }
 .login {
   box-sizing: border-box;

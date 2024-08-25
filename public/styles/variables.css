@@ -1,43 +1,41 @@
 :root {
   --page-bg: #202020;
-  --content-text: #fff;
-  --content-bg: #343434;
 
-  --header-border: #ffffff5d;
+  --header-text: #fff; /* opposite from page bg */
+  --content-text: #000;
+  --content-bg: #fffffffc;
+
+  --header-border: 1px solid #ffffff5d;
   --logo-text: red;
 
   --primary-color: #7e48d6;
   --primary-hover: #6c38bf;
 
+  --middle-color: #d246c9; /* middle between secondary and primary */
   --secondary-color: #fdcda7;
-  --tertiary-color: #d246c9; /* middle between secondary and primary */
 
-  --form-bg: #ffffff;
-  --input-border: #ccc;
+  --footer-bg: var(--content-bg);
 
-  --footer-bg: #ffffff;
-
-  /* gradients */
-
-  --first-third-gradient: linear-gradient(
-    to right,
-    var(--primary-color),
-    var(--tertiary-color)
-  );
-  --first-third-second-gradient: linear-gradient(
-    to right,
-    var(--primary-color),
-    var(--tertiary-color),
-    var(--secondary-color)
-  );
-
-  /* same for light and dark mode */
-  --form-bg: #202020;
+  --form-bg: var(--content-bg);
   --form-shadow: rgb(182, 182, 182);
+  --input-border: #ccc;
 
   --hyperlink-color: rgb(68, 158, 255);
   --focus-color: #007bff;
 
-  --radius-button: 5px;
+  --radius-button: 2px;
   --transition-duration: 0.3s;
+
+  /* gradients */
+  --first-third-gradient: linear-gradient(
+    to right,
+    var(--primary-color, var(--l)),
+    var(--middle-color)
+  );
+  --first-third-second-gradient: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--middle-color),
+    var(--secondary-color)
+  );
 }

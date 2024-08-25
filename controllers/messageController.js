@@ -1,5 +1,5 @@
-const Message = require('../models/message');
-const User = require('../models/user');
+const Message = require("../models/message");
+const User = require("../models/user");
 
 function isAuthenticated(req) {
   return req.isAuthenticated();
@@ -8,13 +8,17 @@ function isAuthenticated(req) {
 exports.getHomePage = async (req, res) => {
   try {
     const messages = await Message.findAll({
-      include: [{ model: User, as: 'user' }],
+      include: [{ model: User, as: "user" }],
     });
     const isUserAuthenticated = isAuthenticated(req);
 
-    res.render('home', { title: 'Message Board', messages, isUserAuthenticated });
+    res.render("home", {
+      title: "Message Board",
+      messages,
+      isUserAuthenticated,
+    });
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send("Internal Server Error");
   }
 };

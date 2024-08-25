@@ -7,10 +7,10 @@ header {
   align-items: center;
 
   background-color: var(--page-bg);
-  color: var(--content-text);
+  color: var(--header-text);
 
   padding: 1.5rem 1.5rem;
-  border-bottom: 1px solid var(--header-border);
+  border-bottom: var(--header-border);
 }
 
 .logo {
@@ -28,16 +28,22 @@ header {
   content: "THE ODIN";
   position: absolute;
   top: 2px;
-  color: var(--content-text);
   right: 3px;
   font-size: 1.2rem;
+  color: var(--header-text);
 }
 
-
+.logout {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+.logout:hover {
+  text-decoration: underline;
+}
 
 @media screen and (max-width: 700px) {
   .buttons {
     flex-direction: column;
   }
 }
-

@@ -2,7 +2,12 @@ const passport = require("passport");
 const bcrypt = require("bcryptjs");
 const User = require("../models/user");
 
+function isAuthenticated(req) {
+  return req.isAuthenticated();
+}
+
 exports.signupForm = (req, res) => {
+  if (isAuthenticated(req)) return res.redirect("/");
   res.render("signup", {
     title: "Sign Up",
   });
@@ -19,7 +24,7 @@ exports.signup = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-   const newUser = await User.create({
+    const newUser = await User.create({
       firstName,
       lastName,
       email,
@@ -41,9 +46,11 @@ exports.signup = async (req, res) => {
 };
 
 exports.loginForm = (req, res, next) => {
-  res.render("login", {
-    title: "Log In",
-  });
+  if (isAuthenticated(req)) return res.redirect("/");
+  else
+    res.render("login", {
+      title: "Log In",
+    });
 };
 
 exports.login = (req, res, next) => {

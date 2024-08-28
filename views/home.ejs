@@ -1,6 +1,40 @@
 <div class="message-board">
   <% if (isUserAuthenticated) { %>
-  <p>Welcome back, <%= user.firstName %>!</p>
+  <form action="/create" method="post" class="form-create">
+    <div>
+      <div class="svg-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-user"
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4" b></circle>
+        </svg>
+      </div>
+      <div class="inputs-container">
+        <textarea
+          name="title"
+          id="title"
+          placeholder="Message title..."
+        ></textarea>
+        <textarea
+          name="message"
+          id="message"
+          placeholder="Write a new message..."
+        ></textarea>
+      </div>
+    </div>
+
+    <button class="button-message" type="submit">Post</button>
+  </form>
   <!-- Display messages with author and date -->
   <% messages.forEach(message => { %>
   <div>
@@ -9,7 +43,6 @@
     <small>By <%= message.user.firstName %> on <%= message.createdAt %></small>
   </div>
   <% }); %> <% } else { %>
-  <p>Please log in to see more details.</p>
   <!-- Display messages without author and date -->
   <% messages.forEach(message => { %>
   <div>

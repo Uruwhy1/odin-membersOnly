@@ -3,7 +3,6 @@ header {
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
 
   background-color: var(--header-bg);
@@ -11,6 +10,10 @@ header {
 
   padding: 0 1.5rem;
   border-bottom: 1px solid var(--header-border);
+}
+
+.logo {
+  margin-right: auto;
 }
 
 .logo img {
@@ -32,9 +35,9 @@ header {
 }
 
 .svg-container {
-  background-color: gray;
+  background-color: var(--primary-color);
   color: #fff;
-  padding: 0.25rem;
+  padding: 0.3rem;
 
   border-radius: var(--radius-button);
 

@@ -14,6 +14,7 @@
 
   --form-page-bg: #262626;
   --form-bg: var(--content-bg);
+  --even-message-bg: #e8e8e8;
   --form-shadow: rgb(182, 182, 182);
   --input-border: #ccc;
 
@@ -63,5 +64,4 @@
   --footer-bg: var(--content-bg);
 
   --hyperlink-color: #0066cc;
-  --focus-color: #0056b3;
 }

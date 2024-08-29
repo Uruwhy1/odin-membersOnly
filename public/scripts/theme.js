@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const themeButtons = document.querySelectorAll("#theme-button");
 
   const savedTheme = localStorage.getItem("theme");
-  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const systemPrefersDark = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
 
   const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
   applyTheme(initialTheme);
@@ -33,12 +35,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
-
-    const logo = document.querySelector(".logo img");
-    if (theme === "light") {
-      logo.src = "/images/logo-light.png";
-    } else {
-      logo.src = "/images/logo-dark.png";
-    }
   }
 });

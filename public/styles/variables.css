@@ -1,6 +1,7 @@
 :root {
   --radius-button: 2px;
   --transition-duration: 0.3s;
+  --longer-transition-duration: 0.5s;
 
   --primary-color: #7e48d6;
   --primary-hover: #6c38bf;
@@ -19,11 +20,6 @@
   --input-border: #ccc;
 
   /* gradients */
-  --first-third-gradient: linear-gradient(
-    to right,
-    var(--primary-color, var(--l)),
-    var(--middle-color)
-  );
   --first-third-second-gradient: linear-gradient(
     to right,
     var(--primary-color),
@@ -46,12 +42,13 @@
   --logo-text: red;
 
   --footer-bg: var(--content-bg);
+  --footer-text: var(--content-text);
 }
 
 :root[data-theme="light"] {
   --page-bg: #e6e6e6;
 
-  --header-bg: #ffffff;
+  --header-bg: #fff;
   --header-text: #000000;
 
   --content-text: #000000;
@@ -61,7 +58,8 @@
   --user-options-border: #00000079;
   --logo-text: #ff0000;
 
-  --footer-bg: var(--content-bg);
+  --footer-bg: #242424;
+  --footer-text: #fff;
 
   --hyperlink-color: #0066cc;
 }

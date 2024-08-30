@@ -1,0 +1,135 @@
+/**************************************************
+  Message Board (container)
+***************************************************/
+
+.message-board {
+  background-color: var(--content-bg);
+  box-shadow: 10px 10px var(--content-shadow);
+
+  margin-bottom: 30px;
+
+  width: clamp(500px, 80%, 850px);
+  overflow: scroll;
+}
+
+.message-board > * {
+  padding: 1rem;
+}
+
+.message-board > *:nth-child(even) {
+  background-color: var(--even-message-bg);
+}
+
+/**************************************************
+  Create message form
+***************************************************/
+
+.form-create {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-create .svg-container {
+  width: 40px;
+  height: 40px;
+
+  background-color: var(--primary-color);
+}
+
+.form-create > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.inputs-container {
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+
+  padding: 0.25em;
+
+  resize: none;
+}
+
+#title {
+  margin-bottom: 0.5rem;
+  height: 2rem;
+
+  font-weight: 500;
+}
+
+textarea:focus-visible {
+  outline: 2px solid var(--focus-color);
+  border-color: transparent;
+}
+
+.button-message {
+  width: 100px;
+
+  align-self: flex-end;
+
+  border: none;
+  border-radius: var(--radius-button);
+
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+
+  padding: 0.5em 0;
+  cursor: pointer;
+
+  transition: filter var(--transition-duration);
+}
+.button-message:hover {
+  filter: saturate(2);
+}
+
+/**************************************************
+ Message items
+***************************************************/
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 0.5rem;
+}
+
+.message .black-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+  border-radius: var(--radius-button);
+  background-color: var(--page-bg);
+  padding: 0.5rem 0.5rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.message .title {
+  font-size: 1.4rem;
+}
+
+.message .author {
+  font-weight: 500;
+}
+
+.message small {
+  align-self: flex-end;
+  position: relative;
+  bottom: -0.8rem;
+}

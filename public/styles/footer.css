@@ -36,14 +36,14 @@ footer button {
   font-size: 1rem;
   font-weight: 500;
 
-  background-color: var(--page-bg);
-  color: var(--header-text);
+  background-color: var(--primary-color);
+  color: #fff;
 
   cursor: pointer;
-  transition: all var(--transition-duration), --l var(--transition-duration);
+  transition: filter var(--transition-duration);
 }
 footer button:hover {
-  background-color: var(--primary-color);
+  filter: saturate(2);
   color: #fff;
 }
 

@@ -58,7 +58,7 @@ header {
   justify-content: center;
   align-items: center;
 
-  transition: filter var(--transition-duration);
+  transition: background var(--transition-duration);
 }
 
 .header-user > p {
@@ -85,7 +85,7 @@ header {
   flex-direction: column;
 }
 .header-user:hover .svg-container {
-  filter: saturate(2.5);
+  background-color: var(--primary-light);
 }
 
 .user-options > * {

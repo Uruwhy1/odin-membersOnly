@@ -2,11 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const themeButtons = document.querySelectorAll("#theme-button");
 
   const savedTheme = localStorage.getItem("theme");
-  const systemPrefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
 
-  const initialTheme = savedTheme || (systemPrefersDark ? "dark" : "light");
+  const initialTheme = savedTheme;
   applyTheme(initialTheme);
 
   if (savedTheme) {

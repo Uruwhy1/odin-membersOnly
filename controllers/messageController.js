@@ -9,6 +9,7 @@ exports.getHomePage = async (req, res) => {
   try {
     const messages = await Message.findAll({
       include: [{ model: User, as: "user" }],
+      order: [["id", "DESC"]],
     });
     const isUserAuthenticated = isAuthenticated(req);
 

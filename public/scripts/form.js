@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
       case "incorrect password.":
         document.getElementById("password").focus();
         return "Incorrect password.";
+      case "invalid passcode":
+        document.getElementById('passKey').focus();
+        return "That is not a valid code."
       default:
         return "Unexpected error ocurred.";
     }

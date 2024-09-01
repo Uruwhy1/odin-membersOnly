@@ -83,3 +83,40 @@ exports.logout = (req, res) => {
     });
   });
 };
+
+exports.membershipForm = (req, res) => {
+  const user = req.user;
+  if (!user) {
+    return res.redirect("/?error=Not authenticated");
+  }
+
+  res.render("become-member", { title: "Membership Form" });
+};
+exports.getMembership = async (req, res) => {
+  try {
+    const passCode = req.body.passKey;
+    console.log(passCode);
+    if (passCode !== "secretKey") {
+      return res.redirect("/member/?error=Invalid passcode");
+    }
+
+    const user = req.user;
+    user.membershipStatus = true;
+    await user.save();
+
+
+    // update session changes are displayed
+    req.session.user = user;
+
+    req.session.save((err) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send("Internal Server Error");
+      }
+      res.redirect("/?success=Membership updated");
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+};

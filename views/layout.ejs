@@ -15,13 +15,13 @@
   <body>
     <div id="loading"></div>
 
-    <% if (title !== "Log In" && title !== "Sign Up") { %> <%-
+    <% if (title !== "Log In" && title !== "Sign Up" && title !== 'Membership Form') { %> <%-
     include('./partial/header.ejs', { isUserAuthenticated: isUserAuthenticated
     }) %> <% } %>
 
     <main><%- body %></main>
 
-    <% if (title !== "Log In" && title !== "Sign Up" && !isUserAuthenticated) {
+    <% if (title !== "Log In" && title !== "Sign Up" && title !== 'Membership Form' && !isUserAuthenticated) {
     %> <%- include('./partial/footer.ejs',) %> <% } %>
   </body>
 </html>

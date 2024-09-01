@@ -28,7 +28,13 @@
   );
 }
 
-:root[data-theme="dark"] {
+/* if wondering why is this separated in two:
+ * top one is common styles between light and dark mode,
+ * bottom one is only dark mode styles.
+ * (But I decided not to do different themes xd) 
+ */
+
+:root {
   --page-bg: #2d2d2d;
 
   --header-bg: #fff;

@@ -1,5 +1,6 @@
 :root {
   --radius-button: 2px;
+  --shorter-transition-duration: 0.15s;
   --transition-duration: 0.3s;
   --longer-transition-duration: 0.5s;
 
@@ -55,8 +56,8 @@
   --user-options-border: #00000079;
   --logo-text: #ff0000;
 
-  --footer-bg: #fff;
-  --footer-text: #000;
+  --footer-bg: var(--first-second-gradient);
+  --footer-text: #fff;
 
   --hyperlink-color: #0066cc;
 }

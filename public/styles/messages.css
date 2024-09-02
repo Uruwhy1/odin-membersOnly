@@ -127,8 +127,12 @@ textarea:focus-visible {
 .message .author {
   font-weight: 500;
 }
+.own-message .black-container {
+  background: var(--primary-color);
+}
 
 .message small {
+  color: rgb(126, 126, 126);
   align-self: flex-end;
   position: relative;
   bottom: -0.8rem;

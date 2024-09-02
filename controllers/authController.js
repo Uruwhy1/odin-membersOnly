@@ -1,6 +1,7 @@
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
-const User = require("../models/user");
+const User = require("../models/user.js");
+const Message = require("../models/message.js");
 
 function isAuthenticated(req) {
   return req.isAuthenticated();
@@ -96,14 +97,19 @@ exports.getMembership = async (req, res) => {
   try {
     const passCode = req.body.passKey;
     console.log(passCode);
+
+    if (passCode === "reset") {
+      await Message.destroy({ where: {} });
+
+      return res.redirect("/?success=All messages deleted");
+    }
+
     if (passCode !== "secretKey") {
       return res.redirect("/member/?error=Invalid passcode");
     }
-
     const user = req.user;
     user.membershipStatus = true;
     await user.save();
-
 
     // update session changes are displayed
     req.session.user = user;

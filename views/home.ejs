@@ -37,7 +37,9 @@
     <button class="button-message" type="submit">Post</button>
   </form>
   <% } messages.forEach(message => { %>
-  <div class="message">
+  <div
+    class="message <%= user && user.id === message.user.id ? 'own-message' : '' %>"
+  >
     <div class="message-header">
       <h2 class="title black-container"><%= message.title %></h2>
       <% if (user && user.membershipStatus) { %>

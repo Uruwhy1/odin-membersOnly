@@ -84,9 +84,6 @@ header {
   display: flex;
   flex-direction: column;
 }
-.header-user:hover .svg-container {
-  background-color: var(--primary-light);
-}
 
 .user-options > * {
   margin: auto;
@@ -155,8 +152,9 @@ header {
   outline-color: var(--secondary-color);
 }
 
-@media screen and (max-width: 700px) {
-  .buttons {
-    flex-direction: column;
-  }
+.disable {
+  background: var(--first-second-gradient) !important;
+
+  user-select: none;
+  pointer-events: none;
 }

@@ -26,6 +26,12 @@
     var(--middle-color),
     var(--secondary-color)
   );
+
+  --first-second-gradient: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 
 /* if wondering why is this separated in two:

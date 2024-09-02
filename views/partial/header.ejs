@@ -86,7 +86,10 @@
           </svg>
         </button>
       </div> -->
-      <a href="/member">Become a Member</a>
+      <a href="/member" <% if (user.membershipStatus) {%>
+        class="disable"> Already a Member! <% } else { %> > Become a Member <% }
+        %>
+      </a>
       <a class="logout" href="/logout">Logout</a>
     </div>
   </div>
